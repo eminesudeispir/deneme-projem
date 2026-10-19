@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace deneme_dosyası_8
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            double sicaklik;
+
+            if (double.TryParse(textBox1.Text, out sicaklik))
+            {
+                if (sicaklik < 10)
+                {
+                    MessageBox.Show("Hava soğuk");
+                }
+                else if (sicaklik <= 25)
+                {
+                    MessageBox.Show("Hava hafif sıcak");
+                }
+                else
+                {
+                    MessageBox.Show("Hava sıcak");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Lütfen geçerli bir sıcaklık giriniz.");
+            }
+        }
+    }
+}
