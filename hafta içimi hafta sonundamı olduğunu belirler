@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace deneme_dosyası_11
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Günün numarasını güvenli bir şekilde alıyoruz
+            int gun = (int)DateTime.Now.DayOfWeek;
+
+            switch (gun)
+            {
+                case 1: // Pazartesi
+                case 2: // Salı
+                case 3: // Çarşamba
+                case 4: // Perşembe
+                case 5: // Cuma
+                    MessageBox.Show("Hafta içi");
+                    break;
+
+                case 6: // Cumartesi
+                case 0: // Pazar
+                    MessageBox.Show("Hafta Sonu");
+                    break;
+
+                default:
+                    MessageBox.Show("Hata oluştu.");
+                    break;
+                
+            }
+        }
+    }
+}
