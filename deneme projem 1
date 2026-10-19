@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace deneme_dosyası_2
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string s1 = textBox1.Text.Trim();
+            string s2 = textBox2.Text.Trim();
+
+            if (!byte.TryParse(s1, out byte sayi1) || !byte.TryParse(s2, out byte sayi2))
+            {
+                MessageBox.Show("Lütfen 0-255 arası geçerli tam sayı giriniz.", "Geçersiz giriş", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (sayi1 > sayi2)
+            {
+                MessageBox.Show("1. sayı 2.sayıdan büyüktür.");
+            }
+            else if (sayi1 == sayi2)
+            {
+                MessageBox.Show("Sayılar birbirine eşittir.");
+            }
+            else (sayi2 > sayi1)
+            {
+                MessageBox.Show("2. sayı 1. sayıdan büyüktür.");
+            }
+        }
+    }
+}
